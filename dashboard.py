@@ -401,46 +401,41 @@ st.markdown(f"""
     }}
     
     /* Fix dropdown/selectbox options and search bar */
-    [data-baseweb="select"] {{
+    div[data-baseweb="select"], [data-baseweb="select"] div, [data-baseweb="select"] input {{
         background-color: #FFFFFF !important;
-        color: #1A1A1A !important;
+        color: #1B1B1B !important;
     }}
     
-    /* The part that holds the selected value and search input */
-    [data-baseweb="select"] > div {{
+    /* CRITICAL: Target the dropdown portal menu */
+    [data-baseweb="popover"], [data-baseweb="menu"], ul[role="listbox"] {{
         background-color: #FFFFFF !important;
-        color: #1A1A1A !important;
+        background: #FFFFFF !important;
     }}
     
-    /* The actual input field */
-    [data-baseweb="select"] input {{
-        color: #1A1A1A !important;
-        caret-color: #1A1A1A !important;
-    }}
-    
-    /* The dropdown menu */
-    [data-baseweb="menu"] {{
+    /* Target individual items in the list */
+    [data-baseweb="menu"] li, 
+    [role="option"], 
+    div[id^="bui"] {{ 
         background-color: #FFFFFF !important;
+        color: #1B1B1B !important;
     }}
-    
-    [data-baseweb="menu"] li, [data-baseweb="menu"] div {{
-        color: #1A1A1A !important;
-        background-color: #FFFFFF !important;
+
+    /* Hover state for items */
+    [role="option"]:hover, [data-baseweb="menu"] li:hover {{
+        background-color: #F0F2F6 !important;
+        color: #1B1B1B !important;
     }}
-    
-    [data-baseweb="menu"] li:hover, [data-baseweb="menu"] div:hover {{
-        background-color: #F0F0F0 !important;
-    }}
-    
+
     /* Selectbox label */
-    .stSelectbox label, .stSelectbox p {{
-        color: #1A1A1A !important;
-        font-weight: 600 !important;
+    .stSelectbox label p {{
+        color: #1B1B1B !important;
+        font-weight: 700 !important;
     }}
-    
-    /* Value placeholder */
-    [data-baseweb="select"] [data-testid="stMarkdownContainer"] p {{
-        color: #1A1A1A !important;
+
+    /* Fix the text inside the search bar when typing */
+    input[aria-autocomplete="list"] {{
+        color: #1B1B1B !important;
+        -webkit-text-fill-color: #1B1B1B !important;
     }}
 </style>
 """, unsafe_allow_html=True)
