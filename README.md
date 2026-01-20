@@ -1,3 +1,14 @@
+---
+title: Aadhaar Insights Analytics
+emoji: 🇮🇳
+colorFrom: orange
+colorTo: blue
+sdk: streamlit
+sdk_version: 1.32.0
+app_file: dashboard.py
+pinned: false
+---
+
 # 🇮🇳 Aadhaar Insights Analysis Dashboard
 ### UIDAI Data Hackathon 2026 - Final Submission
 
