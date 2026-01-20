@@ -437,6 +437,17 @@ st.markdown(f"""
         color: #1B1B1B !important;
         -webkit-text-fill-color: #1B1B1B !important;
     }}
+    
+    /* FIX PLOTLY HOVER LABELS (TOOLTIPS) */
+    .js-plotly-plot .hoverlayer .hovertext path {{
+        fill: #FFFFFF !important;
+        stroke: #DEE2E6 !important;
+        opacity: 0.95 !important;
+    }}
+    .js-plotly-plot .hoverlayer .hovertext text {{
+        fill: #1B1B1B !important;
+        color: #1B1B1B !important;
+    }}
 </style>
 """, unsafe_allow_html=True)
 
