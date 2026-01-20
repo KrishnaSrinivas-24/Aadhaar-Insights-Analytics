@@ -400,40 +400,47 @@ st.markdown(f"""
         color: #FFFFFF !important;
     }}
     
-    /* Fix dropdown/selectbox options */
-    [data-baseweb="select"] [data-baseweb="menu"] {{
-        background: #FFFFFF !important;
-    }}
-    
-    [data-baseweb="select"] [data-baseweb="menu"] li {{
-        color: #1A1A1A !important;
-        background: #FFFFFF !important;
-    }}
-    
-    [data-baseweb="select"] [data-baseweb="menu"] li:hover {{
-        background: #F0F0F0 !important;
-    }}
-    
-    /* Selectbox input and dropdown */
-    .stSelectbox div[data-baseweb="select"] > div {{
-        background: #FFFFFF !important;
+    /* Fix dropdown/selectbox options and search bar */
+    [data-baseweb="select"] {{
+        background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }}
     
-    /* Dropdown list items */
-    ul[role="listbox"] li {{
+    /* The part that holds the selected value and search input */
+    [data-baseweb="select"] > div {{
+        background-color: #FFFFFF !important;
         color: #1A1A1A !important;
-        background: #FFFFFF !important;
     }}
     
-    ul[role="listbox"] li:hover {{
-        background: #E8E8E8 !important;
+    /* The actual input field */
+    [data-baseweb="select"] input {{
+        color: #1A1A1A !important;
+        caret-color: #1A1A1A !important;
     }}
     
-    /* Override dark text for tabs specifically */
-    [data-baseweb="tab-list"] button p,
-    [data-baseweb="tab-list"] button span {{
-        color: #FFFFFF !important;
+    /* The dropdown menu */
+    [data-baseweb="menu"] {{
+        background-color: #FFFFFF !important;
+    }}
+    
+    [data-baseweb="menu"] li, [data-baseweb="menu"] div {{
+        color: #1A1A1A !important;
+        background-color: #FFFFFF !important;
+    }}
+    
+    [data-baseweb="menu"] li:hover, [data-baseweb="menu"] div:hover {{
+        background-color: #F0F0F0 !important;
+    }}
+    
+    /* Selectbox label */
+    .stSelectbox label, .stSelectbox p {{
+        color: #1A1A1A !important;
+        font-weight: 600 !important;
+    }}
+    
+    /* Value placeholder */
+    [data-baseweb="select"] [data-testid="stMarkdownContainer"] p {{
+        color: #1A1A1A !important;
     }}
 </style>
 """, unsafe_allow_html=True)
