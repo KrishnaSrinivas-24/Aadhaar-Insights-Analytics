@@ -1,0 +1,30 @@
+name: Documentation Check
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Check for documentation updates
+      run: |
+        echo "Checking if PR includes documentation updates..."
+        if git diff HEAD~1 HEAD --name-only | grep -q -E '\.md$|\.txt$'; then
+          echo "✅ Documentation found"
+        else
+          echo "⚠️  Consider adding/updating documentation"
+        fi
+    
+    - name: Validate Markdown
+      uses: nosborn/github-action-markdown-cli@v3.3.0
+      with:
+        files: .
+        config_file: .markdownlint.json
+      continue-on-error: true
